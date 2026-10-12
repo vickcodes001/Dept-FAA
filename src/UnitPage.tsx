@@ -24,7 +24,7 @@ const UnitPage = () => {
 
   return (
     <div className="text-gray-800">
-      <Navbar />
+      <Navbar onContactClick={open} />
 
       {/* ── HERO ── faded bg + tagline + blue-bordered title box */}
       <div

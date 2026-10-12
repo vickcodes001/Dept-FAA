@@ -87,7 +87,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
       </div>
 
       <ApplicationModal
-        open={isModalOpen}
+        isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
     </section>

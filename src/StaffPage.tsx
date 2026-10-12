@@ -10,7 +10,7 @@ const NAVY = "#031430";
 const StaffPage = () => {
   return (
     <div style={{ backgroundColor: NAVY, minHeight: "100vh" }}>
-      <Navbar />
+      <Navbar onContactClick={open}/>
 
       {/* Page hero */}
       <div
