@@ -55,8 +55,8 @@ const Announcements = () => {
 
         {/* Cards grid */}
         <div
-          className="grid gap-6"
-          style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+          // style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
         >
           {announcements.map((item) => (
             <div
