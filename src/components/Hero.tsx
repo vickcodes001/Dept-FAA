@@ -13,10 +13,11 @@ const Hero = ({ onContactClick }: HeroProps) => {
   return (
     <section className="w-full overflow-hidden">
       {/* first section */}
-      <div className="grid lg:grid-cols-2 h-125 max-w-360 mx-auto relative">
+      <div className="grid lg:grid-cols-2 lg:h-125 max-w-360 mx-auto relative">
+        {/* subsection */}
         <div className="relative flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="absolute right-[-60%] top-1/2 -translate-y-1/2 bg-[#E84A27] w-full h-125 rounded-full z-10" />
-          <h1 className="relative z-20 text-6xl text-[#1b2a4a] font-bold leading-tight">
+          <div className="absolute right-[-50%] lg:right-[-60%] top-1/2 -translate-y-1/2 bg-[#E84A27] w-full h-100 lg:h-125 rounded-full z-10" />
+          <h1 className="relative z-20 text-4xl lg:text-6xl text-[#1b2a4a] font-bold leading-tight">
             Department of Fine <br />
             <span>& Applied Arts</span>
           </h1>
@@ -25,7 +26,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
         <div className="relative">
           <div className="absolute top-0 left-0 h-full w-[50vw]">
             <video
-              src="/dept-video.mp4"
+              src="/intro.mp4"
               autoPlay
               muted
               loop
@@ -37,7 +38,7 @@ const Hero = ({ onContactClick }: HeroProps) => {
       </div>
 
       {/* second section */}
-      <div className="grid lg:grid-cols-2 h-125 mx-auto relative">
+      <div className="grid lg:grid-cols-2 lg:h-125 mx-auto relative">
         <div className="grid grid-cols-2 w-full relative z-20">
           <div className="h-125">
             <img

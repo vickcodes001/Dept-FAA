@@ -1,16 +1,21 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import staff from "./data/staff";
-
+import useContactModal from "./hooks/useContactModal";
+import ContactModal from "./components/ContactModal";
 
 const BLUE = "#3aafe4";
-// const DARK = "#2d3748";
 const NAVY = "#031430";
 
 const StaffPage = () => {
+  const { isOpen, open, close } = useContactModal();
+
+  const hod = staff.find((m) => m.id === 1)!;
+  const rest = staff.filter((m) => m.id !== 1);
+
   return (
     <div style={{ backgroundColor: NAVY, minHeight: "100vh" }}>
-      <Navbar onContactClick={open}/>
+      <Navbar onContactClick={open} />
 
       {/* Page hero */}
       <div
@@ -38,10 +43,155 @@ const StaffPage = () => {
         </p>
       </div>
 
-      {/* Staff grid */}
+      {/* ── HOD SECTION ── */}
+      <div
+        className="w-full"
+        style={{ borderBottom: `1px solid rgba(58,175,228,0.15)` }}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+          <div className="grid grid-cols-2 gap-16 items-center">
+            {/* HOD Photo */}
+            <div className="relative">
+              {/* Decorative blue accent behind image */}
+              <div
+                className="absolute"
+                style={{
+                  top: "24px",
+                  left: "24px",
+                  right: "-24px",
+                  bottom: "-24px",
+                  border: `2px solid ${BLUE}`,
+                  opacity: 0.25,
+                }}
+              />
+              <div
+                className="relative overflow-hidden"
+                style={{ aspectRatio: "4/5" }}
+              >
+                <img
+                  src={hod.image}
+                  alt={hod.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(hod.name)}&background=1b2a4a&color=3aafe4&size=800`;
+                  }}
+                />
+                {/* Name overlay at bottom of photo */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 px-6 py-5"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(3,20,48,0.95) 60%, transparent)",
+                  }}
+                >
+                  <h2
+                    className="font-bold text-white mb-1"
+                    style={{ fontSize: "1.2rem" }}
+                  >
+                    {hod.name}
+                  </h2>
+                  <p
+                    className="text-xs font-bold tracking-widest"
+                    style={{ color: BLUE, letterSpacing: "0.14em" }}
+                  >
+                    {hod.title.toUpperCase()}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* HOD Welcome Speech */}
+            <div className="flex flex-col justify-center">
+              <p
+                className="text-xs font-bold tracking-widest mb-4"
+                style={{ color: BLUE, letterSpacing: "0.18em" }}
+              >
+                WELCOME ADDRESS
+              </p>
+              <h3
+                className="font-bold text-white mb-6 leading-snug"
+                style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
+              >
+                A Message from the Head of Department
+              </h3>
+
+              {/* Quote mark */}
+              <div
+                className="text-6xl font-bold leading-none mb-4 select-none"
+                style={{
+                  color: BLUE,
+                  opacity: 0.4,
+                  fontFamily: "Georgia, serif",
+                }}
+              >
+                "
+              </div>
+
+              <div
+                className="flex flex-col gap-4 text-sm leading-relaxed"
+                style={{ color: "#a0aec0" }}
+              >
+                <p>
+                  Welcome to the Department of Fine & Applied Arts. For over
+                  four decades, this department has been a crucible of creative
+                  excellence — a place where raw talent is shaped into
+                  purposeful artistic practice.
+                </p>
+                <p>
+                  Our faculty are not merely teachers; they are active
+                  practitioners, researchers, and advocates for the power of the
+                  arts in society. We believe that a rigorous education in the
+                  visual arts equips our graduates not only with technical
+                  mastery, but with the critical thinking and cultural
+                  sensitivity needed to make a lasting difference.
+                </p>
+                <p>
+                  Whether you are a prospective student, a collaborator, or a
+                  visitor to our work, I invite you to explore the richness of
+                  what we do here — and to join us in celebrating the
+                  transformative power of art.
+                </p>
+              </div>
+
+              {/* Closing signature */}
+              <div
+                className="mt-8 pt-6"
+                style={{ borderTop: `1px solid rgba(58,175,228,0.2)` }}
+              >
+                <p className="font-bold text-white text-sm">{hod.name}</p>
+                <p className="text-xs mt-1" style={{ color: "#718096" }}>
+                  {hod.title} · {hod.department}
+                </p>
+                <a
+                  href={`mailto:${hod.email}`}
+                  className="text-xs font-bold tracking-widest mt-2 inline-block transition-opacity hover:opacity-70"
+                  style={{ color: BLUE, letterSpacing: "0.12em" }}
+                >
+                  {hod.email}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── STAFF GRID ── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+        <p
+          className="text-xs font-bold tracking-widest mb-2"
+          style={{ color: BLUE, letterSpacing: "0.18em" }}
+        >
+          ACADEMIC STAFF
+        </p>
+        <h2
+          className="font-bold text-white mb-16"
+          style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
+        >
+          Faculty Members
+        </h2>
+
         <div className="grid grid-cols-3 gap-x-8 gap-y-16">
-          {staff.map((member) => (
+          {rest.map((member) => (
             <div key={member.id} className="flex flex-col">
               {/* Photo */}
               <div
@@ -95,6 +245,7 @@ const StaffPage = () => {
       </div>
 
       <Footer />
+      <ContactModal isOpen={isOpen} onClose={close} />
     </div>
   );
 };

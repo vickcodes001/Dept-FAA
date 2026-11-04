@@ -5,7 +5,8 @@ const BLUE = "#3aafe4";
 // const NAVY = "#031430";
 
 // Replace with your actual Google Drive folder link
-const DRIVE_LINK = "https://drive.google.com/drive/folders/YOUR_FOLDER_ID";
+const DRIVE_LINK =
+  "https://drive.google.com/drive/folders/1uAnFFIa6jlk5gWpcrJi9zkhDm8FxuLKL?usp=drive_link";
 
 // Placeholder gallery images — replace with your actual student artwork paths
 const galleryImages = [

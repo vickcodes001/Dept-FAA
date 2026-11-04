@@ -125,18 +125,18 @@ const academicUnits = [
     tagline: "Research. Practice. Impact.",
     description:
       "Postgraduate fine and applied arts programmes. Our PG offerings support advanced research and professional practice across all disciplines in the department.",
-    image: "/images/pg.jpg",
+    image: "/images/pg.PNG",
     programs: [
       {
         name: "MASTER OF FINE ARTS (MFA)",
-        image: "/images/pg.jpg",
+        image: "/images/pg.PNG",
         degrees: ["MFA"],
         description:
           "A terminal degree for practicing artists seeking to deepen their studio research and critical practice in an intensive, research-led environment.",
       },
       {
         name: "DOCTOR OF PHILOSOPHY (PhD)",
-        image: "/images/pg.jpg",
+        image: "/images/pg.PNG",
         degrees: ["PhD"],
         description:
           "For scholars and practitioners pursuing original research at the intersection of art practice, history, theory, and pedagogy.",

@@ -11,12 +11,13 @@ export interface StaffMember {
 const staff: StaffMember[] = [
   {
     id: 1,
-    name: "Prof. Adaeze Okafor",
+    name: "Prof. Emeka Okonkwo Ivan",
     title: "Head of Department",
     department: "Fine & Applied Arts",
-    bio: "Professor Okafor is an internationally recognised painter and visual culture scholar with over 25 years of teaching and practice. She holds a PhD from the University of Lagos and has exhibited across Africa, Europe, and North America.",
-    image: "/images/staff/adaeze.jpg",
-    email: "a.okafor@university.edu.ng",
+    bio: "Dr. Okonkwo Emeka Ivan is a sculptor with the finest of degrees in his time",
+    image:
+      "https://cirs.unizik.edu.ng/uploads/profiles/2026/07/44732/NAU2971.jpg",
+    email: "ie.okonkwo@unizik.edu.ng",
   },
   {
     id: 2,
