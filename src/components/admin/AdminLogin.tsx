@@ -12,6 +12,7 @@ interface AdminLoginProps {
 const AdminLogin = ({ anonSupabase, onSuccess }: AdminLoginProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -92,14 +93,59 @@ const AdminLogin = ({ anonSupabase, onSuccess }: AdminLoginProps) => {
           >
             PASSWORD
           </label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="••••••••"
-            style={inputStyle}
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="••••••••"
+              style={{ ...inputStyle, paddingRight: "3rem" }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((visible) => !visible)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+              aria-pressed={showPassword}
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                height: "100%",
+                padding: "0 1rem",
+                border: 0,
+                background: "transparent",
+                color: BLUE,
+                cursor: "pointer",
+              }}
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {showPassword ? (
+                  <>
+                    <path d="M3 3l18 18" />
+                    <path d="M10.6 10.6a2 2 0 002.8 2.8" />
+                    <path d="M9.9 5.2A10.8 10.8 0 0112 5c5 0 8.3 4.2 9 7-.3 1.1-1 2.3-2.1 3.4" />
+                    <path d="M6.2 6.2C4.4 7.4 3.3 9.3 3 12c.7 2.8 4 7 9 7 1.1 0 2.1-.2 3-.6" />
+                  </>
+                ) : (
+                  <>
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </>
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {error && (
