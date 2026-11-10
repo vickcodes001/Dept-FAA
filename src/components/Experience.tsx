@@ -14,7 +14,7 @@ const Experience = () => {
     },
     {
       name: "School of Art & Design Gallery",
-      description: "Showcase student and faculty artwork and design projects",
+      description: "Showcase student and department artwork and design projects",
       image:
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
     },

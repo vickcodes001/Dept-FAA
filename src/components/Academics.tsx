@@ -5,7 +5,7 @@ const About = () => {
   //   const NAVY = "#1b2a4a";
 
   return (
-    <section id="about" className="py-20 bg-[#031430]">
+    <section id="academics" className="py-20 bg-[#031430]">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">Academic Units</h2>

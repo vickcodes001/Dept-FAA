@@ -19,7 +19,7 @@ const StaffPage = () => {
 
       {/* Page hero */}
       <div
-        className="w-full flex flex-col items-center justify-center py-20 text-center"
+        className="w-full flex flex-col items-center justify-center py-10 lg:py-20 text-center"
         style={{ borderBottom: `3px solid ${BLUE}` }}
       >
         <p
@@ -32,7 +32,7 @@ const StaffPage = () => {
           className="font-bold text-white mb-4"
           style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
         >
-          Our Faculty & Staff
+          Our Department Staff
         </h1>
         <p
           className="max-w-xl text-sm leading-relaxed"
@@ -49,7 +49,7 @@ const StaffPage = () => {
         style={{ borderBottom: `1px solid rgba(58,175,228,0.15)` }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
-          <div className="grid grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 gap-12 items-center">
             {/* HOD Photo */}
             <div className="relative">
               {/* Decorative blue accent behind image */}
@@ -132,23 +132,22 @@ const StaffPage = () => {
                 style={{ color: "#a0aec0" }}
               >
                 <p>
-                  Welcome to the Department of Fine & Applied Arts. For over
-                  four decades, this department has been a crucible of creative
-                  excellence — a place where raw talent is shaped into
-                  purposeful artistic practice.
+                  Welcome to the Department of Fine & Applied Arts. Over the
+                  years, this department has been a crucible of creative
+                  excellence. A place where raw talent is shaped into purposeful
+                  artistic practice.
                 </p>
                 <p>
-                  Our faculty are not merely teachers; they are active
-                  practitioners, researchers, and advocates for the power of the
-                  arts in society. We believe that a rigorous education in the
-                  visual arts equips our graduates not only with technical
-                  mastery, but with the critical thinking and cultural
-                  sensitivity needed to make a lasting difference.
+                  Our staff are educators, practicing artists, and researchers
+                  who champion the value of fine and applied arts. We nurture
+                  creative skill, technical excellence, critical thinking, and
+                  cultural awareness. Welcome; we look forward to your ideas,
+                  talents, and contributions to our vibrant community.
                 </p>
                 <p>
                   Whether you are a prospective student, a collaborator, or a
                   visitor to our work, I invite you to explore the richness of
-                  what we do here — and to join us in celebrating the
+                  what we do here and to join us in celebrating the
                   transformative power of art.
                 </p>
               </div>
@@ -187,10 +186,10 @@ const StaffPage = () => {
           className="font-bold text-white mb-16"
           style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)" }}
         >
-          Faculty Members
+          Department Members
         </h2>
 
-        <div className="grid grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid lg:grid-cols-3 gap-x-8 gap-y-16">
           {rest.map((member) => (
             <div key={member.id} className="flex flex-col">
               {/* Photo */}

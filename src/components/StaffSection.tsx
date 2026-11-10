@@ -24,7 +24,7 @@ const StaffSection = () => {
             className="font-bold text-white"
             style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)" }}
           >
-            Meet the Faculty
+            Meet the Department Staff
           </h2>
           <div
             className="mt-3"

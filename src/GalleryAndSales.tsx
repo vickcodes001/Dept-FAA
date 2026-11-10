@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { supabase } from "./data/supabaseClient";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import useContactModal from "./hooks/useContactModal";
 import ContactModal from "./components/ContactModal";
@@ -33,7 +32,7 @@ const CATEGORIES = [
 ];
 
 const GalleryAndSales = () => {
-  const { isOpen, open, close } = useContactModal();
+  const { isOpen, close } = useContactModal();
   const [artworks, setArtworks] = useState<Artwork[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All");
@@ -74,7 +73,25 @@ const GalleryAndSales = () => {
 
   return (
     <div style={{ backgroundColor: NAVY, minHeight: "100vh" }}>
-      <Navbar onContactClick={open} />
+      <nav
+        className="w-full flex items-center justify-between px-6 lg:px-12 py-4"
+        style={{ borderBottom: "1px solid rgba(58,175,228,0.2)" }}
+      >
+        <a href="/" className="flex items-center" aria-label="Go to homepage">
+          <img
+            src="/images/Logo.webp"
+            alt="College Logo"
+            className="w-50 mr-3"
+          />
+        </a>
+        <a
+          href="/"
+          className="px-4 py-2 text-xs font-bold tracking-widest transition-colors"
+          style={{ border: `1px solid ${BLUE}`, color: BLUE }}
+        >
+          GO BACK TO HOME
+        </a>
+      </nav>
 
       {/* Hero */}
       <div
@@ -97,7 +114,7 @@ const GalleryAndSales = () => {
           className="max-w-xl text-sm leading-relaxed"
           style={{ color: "#a0aec0" }}
         >
-          Original artworks by our students and faculty — available for
+          Original artworks by our students and department, available for
           purchase. Each piece is reviewed and approved by the department before
           listing.
         </p>

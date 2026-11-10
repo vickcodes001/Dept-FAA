@@ -53,7 +53,7 @@ const announcements: Announcement[] = [
     date: "2025-05-02",
     category: "Exhibition",
     description:
-      "Works by six members of our faculty will be featured in a group exhibition at the National Museum this May. Free entry for students with valid ID.",
+      "Works by six members of our department will be featured in a group exhibition at the National Museum this May. Free entry for students with valid ID.",
   },
 ];
 
